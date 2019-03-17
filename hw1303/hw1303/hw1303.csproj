@@ -45,6 +45,9 @@
     <Compile Include="MyProtectedUniqueList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringAlreadyExsitsException.cs" />
+    <Compile Include="StringEmptyException.cs" />
+    <Compile Include="WrongPasswordException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

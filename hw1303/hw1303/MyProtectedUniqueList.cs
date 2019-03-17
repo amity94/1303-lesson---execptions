@@ -22,11 +22,11 @@ namespace hw1303
         {
             if (word == null || word == string.Empty)
             {
-                throw new ArgumentNullException("word can't be empty");
+                throw new StringEmptyException("word can't be empty");
             }
             if (words.Contains(word))
             {
-                throw new InvalidOperationException("word already exists");
+                throw new StringAlreadyExsitsException("word already exists");
             }
             words.Add(word);
         }
@@ -35,7 +35,7 @@ namespace hw1303
         {
             if (word == null || word == string.Empty)
             {
-                throw new ArgumentNullException("word can't be empty");
+                throw new StringEmptyException("word can't be empty");
             }
             if (!words.Contains(word))
             {
@@ -57,7 +57,7 @@ namespace hw1303
         {
             if(password != Password)
             {
-                throw new AccessViolationException("password incorrect");
+                throw new WrongPasswordException("password incorrect");
             }
             words.Clear();
         }
@@ -66,7 +66,7 @@ namespace hw1303
         {
             if(password != Password)
             {
-                throw new AccessViolationException("password incorrect");
+                throw new WrongPasswordException("password incorrect");
             }
             words.Sort();
         }

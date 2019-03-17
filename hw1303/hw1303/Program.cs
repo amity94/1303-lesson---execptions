@@ -17,7 +17,7 @@ namespace hw1303
             {
                 words.Add("hello");
             }
-            catch (InvalidOperationException e)
+            catch (StringAlreadyExsitsException e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -26,7 +26,7 @@ namespace hw1303
             {
                 words.Add("");
             }
-            catch (ArgumentNullException e)
+            catch (StringEmptyException e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -67,7 +67,7 @@ namespace hw1303
             {
                 words.Clear("pass");
             }
-            catch (AccessViolationException e)
+            catch (WrongPasswordException e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -84,7 +84,7 @@ namespace hw1303
             {
                 words.Sort("hio");
             }
-            catch(AccessViolationException e)
+            catch(WrongPasswordException e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -106,6 +106,10 @@ namespace hw1303
             list.Add(".NET");
             list.Add("Bye");
             Console.WriteLine(list);
+
+            throw new newexception();
+            throw new newexception2();
+
         }
         static void Trial(string word)
         {
@@ -114,7 +118,7 @@ namespace hw1303
             {
                 words.Add(word);
             }
-            catch (ArgumentNullException e)
+            catch (StringEmptyException e)
             {
                 Console.WriteLine(e.Message);
             }
