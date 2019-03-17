@@ -21,6 +21,7 @@ namespace hw1303
             {
                 Console.WriteLine(e.Message);
             }
+          
             try
             {
                 words.Add("");
@@ -91,6 +92,32 @@ namespace hw1303
             words.Sort("hello");
             foreach (var word in words)
                 Console.WriteLine(word);
+            Console.WriteLine("======================");
+            
+            Trial(null);
+
+            Console.WriteLine(words);
+
+
+            MyProtectedUniqueList list = new MyProtectedUniqueList("hi");
+
+            list.Add("hello");
+            list.Add("C#");
+            list.Add(".NET");
+            list.Add("Bye");
+            Console.WriteLine(list);
+        }
+        static void Trial(string word)
+        {
+            MyProtectedUniqueList words = new MyProtectedUniqueList("hello");
+            try
+            {
+                words.Add(word);
+            }
+            catch (ArgumentNullException e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }

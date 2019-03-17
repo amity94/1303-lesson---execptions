@@ -20,7 +20,7 @@ namespace hw1303
 
         public void Add(string word)
         {
-            if (word == null && word == string.Empty)
+            if (word == null || word == string.Empty)
             {
                 throw new ArgumentNullException("word can't be empty");
             }
@@ -33,7 +33,7 @@ namespace hw1303
 
         public void Remove(string word)
         {
-            if (word == null && word == string.Empty)
+            if (word == null || word == string.Empty)
             {
                 throw new ArgumentNullException("word can't be empty");
             }
@@ -46,7 +46,7 @@ namespace hw1303
 
         public void RemoveAt(int index)
         {
-            if(index ==0 && index > words.Count)
+            if (index < 0 && index >= words.Count)
             {
                 throw new ArgumentOutOfRangeException("index is out of range");
             }
@@ -73,9 +73,12 @@ namespace hw1303
 
         public override string ToString()
         {
-            foreach(var word in words)
-            return word;
-            return null;
+            string temp = "";
+            foreach (var word in words)
+            {
+                temp += word + "\n";
+            }
+            return temp;
         }
 
         IEnumerator IEnumerable.GetEnumerator()
